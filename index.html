@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run Scratch SWF with Ruffle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        #ruffle-player {
+            width: 100%;
+            height: 600px;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Run Scratch SWF File</h1>
+    <p>Enjoy your Scratch SWF file running in your browser!</p>
+    
+    <!-- Ruffle Player Container -->
+    <div id="ruffle-player"></div>
+
+    <!-- Include Ruffle Player Script -->
+    <script src="https://unpkg.com/@ruffle/ruffle"></script>
+    <script>
+        // Create the Ruffle player instance
+        const ruffle = window.RufflePlayer.newest();
+        const player = ruffle.createPlayer();
+        
+        // Append the player to the #ruffle-player div
+        document.getElementById("ruffle-player").appendChild(player);
+        
+        // Load your scratch.swf file (replace with your actual file path)
+        player.load("scratch.swf");
+    </script>
+</body>
+</html>
